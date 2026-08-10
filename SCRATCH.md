@@ -17,3 +17,4 @@
   - Should there be an introductory pitch for $500 for discovery phase?
   - How can I guard myself against walking into a massive project beyond the scope of the $1500 fee or my timeline?
 7. How can I track metrics of success from cold-calling businesses to landing clients to customer satisfaction?
+8. How can I build budgeting tracking? Already have startup costs like LLC and Business Insurance.
