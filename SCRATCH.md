@@ -12,3 +12,4 @@
 2. What kind of Contracts do I need (term-length, deliverables, etc)?
 3. What are my "Products" on offer?
 4. Once we identify products, we will need pitch scripts.
+5. How can we automate the discovery flow of clients (bots, scrapers, etc)?
