@@ -7,7 +7,7 @@ last_updated_at: "2026-08-10"
 
 # Decision Matrix Workflows
 
-This document visualizes the evaluation pipeline for consulting prospects. It serves as the blueprint for the programmatic JSON decision matrix, from initial discovery to final proposal.
+This document visualizes the evaluation pipeline for consulting prospects. It serves as the blueprint for the programmatic JSON decision matrix, from initial discovery to final proposal, and through legal onboarding.
 
 ## 1. Systematized Discovery Sequence
 
@@ -103,4 +103,39 @@ graph TD
     T2 --> U2{Is ongoing maintenance required?}
     U2 -- Yes --> V2[Add $500+/mo Retainer to Proposal]
     U2 -- No --> W3[Finalize One-Off Proposal]
+```
+
+## 6. Legal Execution & Onboarding Workflow
+
+Once a client verbally accepts a proposal, this strict sequence dictates the legal paperwork execution before any technical work begins.
+
+```mermaid
+sequenceDiagram
+    participant Consultant
+    participant Client
+    participant Accounting
+
+    Note over Consultant, Client: Proposal Verbally Accepted
+    
+    alt Deep Technical Audit Required for SOW
+        Consultant->>Client: Send Mutual NDA (MNDA)
+        Client-->>Consultant: Sign MNDA
+        Client-->>Consultant: Share Private Architecture/Data
+    end
+    
+    Consultant->>Consultant: Draft Statement of Work (SOW)
+    
+    alt New Client (No existing MSA)
+        Consultant->>Client: Send Master Services Agreement (MSA)
+        Consultant->>Client: Send Statement of Work (SOW)
+        Client-->>Consultant: Sign MSA & SOW
+    else Existing Client
+        Consultant->>Client: Send Statement of Work (SOW)
+        Client-->>Consultant: Sign SOW
+    end
+    
+    Consultant->>Accounting: Send W-9 Form & Initial Invoice (if applicable)
+    Accounting-->>Consultant: Process Payment / Setup Vendor Profile
+    
+    Note over Consultant, Client: ONLY NOW: Commence Technical Work
 ```
